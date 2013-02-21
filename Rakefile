@@ -1,6 +1,6 @@
 require 'rake/clean'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 $:.unshift File.expand_path(File.dirname(__FILE__))
 $:.unshift File.expand_path(File.dirname(__FILE__), 'lib')
 $:.unshift File.expand_path(File.dirname(__FILE__), 'ext')
