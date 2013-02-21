@@ -28,6 +28,11 @@ module Brill
       tag(text).select{|t| t.last.match(/NN/) }
     end
 
+    # given a body of text return a list of verbs
+    def verbs( text )
+      tag(text).select{|t| t.last.match(/VB|MD/) }
+    end
+
     # see: http://cpansearch.perl.org/src/ACOBURN/Lingua-EN-Tagger-0.15/Tagger.pm
     def noun_phrases(text)
       # ?:$PREP|$DET|$NUM)

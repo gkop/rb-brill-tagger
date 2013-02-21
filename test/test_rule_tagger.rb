@@ -166,6 +166,11 @@ TMZ.com: Britney celebrated getting overnights with her kids by going on a wild 
                   ["channels", "NNS"], ["watches", "NNS"]], results
   end
 
+  def test_verbs
+    results = tagger.verbs("So happy i get to bring my baby boy home tomorrow. Hospital tv is horrible, ten channels no one watches")
+    assert_equal [["get", "VB"], ["bring", "VB"], ["is", "VBZ"]], results
+  end
+
 private
   def tagger
     $rtagger
