@@ -159,6 +159,13 @@ TMZ.com: Britney celebrated getting overnights with her kids by going on a wild 
     assert_equal [["happy", "JJ"], ["horrible", "JJ"]], results
   end
 
+  def test_nouns
+    results = tagger.nouns("So happy i get to bring my baby boy home tomorrow. Hospital tv is horrible, ten channels no one watches")
+    assert_equal [["i", "NN"], ["baby", "NN"], ["boy", "NN"], ["home", "NN"],
+                  ["tomorrow.", "NNP"], ["Hospital", "NNP"], ["tv", "NN"],
+                  ["channels", "NNS"], ["watches", "NNS"]], results
+  end
+
 private
   def tagger
     $rtagger
